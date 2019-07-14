@@ -17,18 +17,20 @@
             <th>Shares</th>
             <th>Initial Stock Price</th>
             <th>Initial Stock Value</th>
-            <th>Results</th>
+            <th>Current Stock Price</th>
+            <th>Current Stock Value</th>
         </tr>
         </thead>
         <tbody>
         {% for stock in stocks %}
-            <tr>
+            <td>
                 <td>{{ stock.customer }}</td>
                 <td>{{ stock.symbol }}</td>
                 <td>{{ stock.name }}</td>
                 <td>{{ stock.shares|intcomma }}</td>
                 <td>{{ stock.purchase_price|intcomma }}</td>
                 <td>{{ stock.initial_stock_value|intcomma}}</td>
+                <td>{{ stock.current_stock_price|intcomma}}</td>
             </tr>
         {% endfor %}
         </tbody>
@@ -38,12 +40,12 @@
         <tr class="bg-info">
             <th>Total of Initial Stocks</th>
             <th>Total of Current Stocks</th>
-            <th>Results</th>
         </tr>
         </thead>
         <tbody>
             <tr>
                 <td>{{ sum_of_initial_stock_value|intcomma }}</td>
+                <td>{{ sum_current_stocks_value }}</td>
             </tr>
         </tbody>
     </table>

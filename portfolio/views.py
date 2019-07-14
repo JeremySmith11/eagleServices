@@ -168,16 +168,15 @@ def portfolio(request, pk):
                                                         'stocks': stocks,
                                                         'sum_acquired_value': sum_acquired_value,
                                                         'sum_recent_value': sum_recent_value,
-                                                        'overall_investment_results': overall_investment_results,
                                                         'sum_current_stocks_value': sum_current_stocks_value,
-                                                        'sum_of_initial_stock_value': sum_of_initial_stock_value, })
+                                                        'sum_of_initial_stock_value': sum_of_initial_stock_value,
+                                                        'overall_investment_results': overall_investment_results, })
 
 
 # List at the end of the views.py
 # Lists all customers
 class CustomerList(APIView):
-    def get(self,request):
+    def get(self, request):
         customers_json = Customer.objects.all()
         serializer = CustomerSerializer(customers_json, many=True)
         return Response(serializer.data)
-

@@ -70,7 +70,8 @@ class Stock(models.Model):
         return str(self.customer)
 
     def initial_stock_value(self):
-        return self.shares * self.purchase_price
+        stocktest = self.shares * self.purchase_price
+        return round(stocktest, 2)
 
     def current_stock_price(self):
         symbol_f = str(self.symbol)
